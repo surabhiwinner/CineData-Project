@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'movies',
+    'authentication',
 ]
 
 MIDDLEWARE = [
@@ -135,3 +136,14 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+#
+
+AUTH_USER_MODEL = 'authentication.Profile'
+
+
+# media  root and url 
+
+MEDIA_ROOT = 'media'
+
+MEDIA_URL = '/media/'
