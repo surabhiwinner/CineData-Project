@@ -8,6 +8,8 @@ from django.conf import settings
 
 urlpatterns = [
     path('movies/', views.MoviesListCreateView.as_view()),
+
+    path('movies/<str:uuid>/',views.MovieRetrieveUpdateDestroyView.as_view())
     ]
 
 

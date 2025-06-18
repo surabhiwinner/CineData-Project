@@ -3,9 +3,7 @@ from rest_framework import serializers
 
 from .models import Movies,Artist
 
-class MoviesSerializer(serializers.ModelSerializer):
-
-    cast = serializers.PrimaryKeyRelatedField(queryset=Artist.objects.all(),many = True)
+class MoviesListRetrieveSerializer(serializers.ModelSerializer):
 
     class Meta:
         
@@ -14,3 +12,14 @@ class MoviesSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
         read_only_fields = ['uuid', 'active_status']
+
+        depth = 1
+
+class MoviesCreateUpdateSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        
+        model = Movies
+
+        exclude = ['cast','active_status','uuid']
+
